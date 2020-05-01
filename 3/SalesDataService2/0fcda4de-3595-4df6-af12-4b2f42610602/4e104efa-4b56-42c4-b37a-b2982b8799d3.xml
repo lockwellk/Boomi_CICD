@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>4e104efa-4b56-42c4-b37a-b2982b8799d3</Id>
+  <Type>connector-settings</Type>
+  <Name>New Http Connection 2</Name>
+  <Version>1</Version>
+  <FolderId name="Boomi_KenHilmen/Demos/boomi_world_2019">
+  3231913</FolderId>
+  <AccountId>boomi_kenhilmen-TS5GBN</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>http</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <HttpSettings authenticationType="BASIC"
+    url="http://localhost:8080">
+      <AuthSettings password="Sy+Ksq43SaULThhXpGqhxrfbfgagdGorPgJhPrdYG+ehAwQDHwy1jwI3iakV73/xP2XNYIW/JygJ/ybhIvlPFuoY+FvJrdzWV6X+zjMbdsmoOlgfOKIEyJTTav9gi90PdzNyRyMCtl6FQbcsFybLEIFTGywTbVXiz8rF6oXww4o="
+      user="username" />
+      <OAuthSettings accessToken="" accessTokenURL=""
+      authorizationURL="" consumerKey="" realm=""
+      requestTokenURL="" suppressBlankAccessToken="false" />
+      <OAuth2Settings grantType="code">
+        <credentials clientId="" />
+        <authorizationTokenEndpoint url="">
+          <sslOptions />
+        </authorizationTokenEndpoint>
+        <authorizationParameters />
+        <accessTokenEndpoint url="">
+          <sslOptions />
+        </accessTokenEndpoint>
+        <accessTokenParameters />
+        <scope />
+      </OAuth2Settings>
+      <AwsSettings>
+        <credentials>
+          <accessKeyId />
+          <awsService>s3</awsService>
+          <customService />
+          <awsRegion>ap-northeast-1</awsRegion>
+          <customRegion />
+        </credentials>
+      </AwsSettings>
+      <SSLOptions clientauth="false" trustServerCert="false" />
+    </HttpSettings>
+  </Object>
+</Component>

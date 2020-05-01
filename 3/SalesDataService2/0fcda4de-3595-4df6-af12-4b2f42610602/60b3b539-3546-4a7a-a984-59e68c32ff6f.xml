@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>60b3b539-3546-4a7a-a984-59e68c32ff6f</Id>
+  <Type>profile.json</Type>
+  <Name>Account JSON 3 2 2</Name>
+  <Version>1</Version>
+  <FolderId name="Boomi_KenHilmen/Demos/boomi_world_2019">
+  3231913</FolderId>
+  <AccountId>boomi_kenhilmen-TS5GBN</AccountId>
+  <Properties />
+  <References />
+  <Description />
+  <Object>
+    <JSONProfile strict="false">
+      <DataElements>
+        <JSONRootValue dataType="character" isMappable="true"
+        isNode="true" key="1" name="Root">
+          <DataFormat>
+            <ProfileCharacterFormat />
+          </DataFormat>
+          <JSONObject isMappable="false" isNode="true" key="2"
+          name="Object">
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="3" name="Name">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="4" name="AccountId">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="5" name="Description">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+            <JSONObjectEntry dataType="character" isMappable="true"
+            isNode="true" key="6" name="Country">
+              <DataFormat>
+                <ProfileCharacterFormat />
+              </DataFormat>
+            </JSONObjectEntry>
+          </JSONObject>
+          <Qualifiers>
+            <QualifierList />
+          </Qualifiers>
+        </JSONRootValue>
+      </DataElements>
+      <tagLists />
+    </JSONProfile>
+  </Object>
+</Component>
