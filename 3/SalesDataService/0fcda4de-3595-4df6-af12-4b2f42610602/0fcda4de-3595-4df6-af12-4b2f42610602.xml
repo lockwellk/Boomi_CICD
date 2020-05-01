@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>0fcda4de-3595-4df6-af12-4b2f42610602</Id>
+  <Type>process</Type>
+  <Name>SalesDataService</Name>
+  <Version>1</Version>
+  <FolderId name="Boomi_KenHilmen/Demos/boomi_world_2019">
+  3231913</FolderId>
+  <AccountId>boomi_kenhilmen-TS5GBN</AccountId>
+  <Properties>
+    <Property>
+      <Name>overrides-enabled</Name>
+      <Value>false</Value>
+    </Property>
+    <Property>
+      <Name>startshape-type</Name>
+      <Value>NOACTION</Value>
+    </Property>
+  </Properties>
+  <References>
+    <Ref compId="60b3b539-3546-4a7a-a984-59e68c32ff6f"
+    refId="shape5-profile" name="Account JSON 3 2 2" />
+    <Ref compId="638a23ef-40f9-48ca-b197-54bac7fecff4"
+    refId="shape10" name="New Map Success 2" />
+    <Ref compId="60b3b539-3546-4a7a-a984-59e68c32ff6f"
+    refId="shape15-parameter-0-profile"
+    name="Account JSON 3 2 2" />
+    <Ref compId="60b3b539-3546-4a7a-a984-59e68c32ff6f"
+    refId="shape15-parameter-1-profile"
+    name="Account JSON 3 2 2" />
+    <Ref compId="4e104efa-4b56-42c4-b37a-b2982b8799d3"
+    refId="shape16.connection" name="New Http Connection 2" />
+    <Ref compId="aec8654f-85ae-4acd-9cfe-2cf558b52977"
+    refId="shape16.operation" name="New Get Operation 2" />
+  </References>
+  <Description />
+  <Object>
+    <process allowSimultaneous="false" enableUserLog="false"
+    processLogOnErrorOnly="false" purgeDataImmediately="false"
+    updateRunDates="false" workload="general">
+      <shapes>
+        <shape image="start" name="shape1" shapetype="start"
+        userlabel="" x="96.0" y="96.0">
+          <configuration>
+            <noaction />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape1.dragpoint1" toShape="shape5"
+            x="272.0" y="105.0">
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg1" orient="horizontal"
+              x="130.0" y="111.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg2" orient="vertical"
+              x="130.0" y="111.0" />
+              <linesegment length="79"
+              name="shape1.dragpoint1.lineseg3" orient="horizontal"
+              x="130.0" y="111.0" />
+              <linesegment length="0"
+              name="shape1.dragpoint1.lineseg4" orient="vertical"
+              x="209.0" y="111.0" />
+              <linesegment length="63"
+              name="shape1.dragpoint1.lineseg5" orient="horizontal"
+              x="209.0" y="111.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="businessrules_icon" name="shape5"
+        shapetype="businessrules" userlabel="isValidCountry"
+        x="288.0" y="96.0">
+          <configuration>
+            <businessrules profileId="60b3b539-3546-4a7a-a984-59e68c32ff6f"
+            profileName="Account JSON 3 2"
+            profileType="profile.json">
+              <rule key="1" name="Acceptable Countries Rule">
+                <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                alias="Country (Root/Object/Country)"
+                elementKey="6" id="1"
+                name="Country (Root/Object/Country)" taglist="0"
+                xsi:type="BusinessRuleField" />
+                <condition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                operator="or" xsi:type="GroupingCondition">
+                  <nestedExpression operator="="
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="1"
+                    name="Country (Root/Object/Country)"
+                    xsi:type="FieldConditionInput" />
+                    <rightInput deleted="false" id="0"
+                    name="&quot;US&quot;" value="US"
+                    xsi:type="StaticConditionInput" />
+                  </nestedExpression>
+                  <nestedExpression operator="="
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="1"
+                    name="Country (Root/Object/Country)"
+                    xsi:type="FieldConditionInput" />
+                    <rightInput deleted="false" id="0"
+                    name="&quot;CA&quot;" value="CA"
+                    xsi:type="StaticConditionInput" />
+                  </nestedExpression>
+                  <nestedExpression operator="="
+                  xsi:type="SimpleCondition">
+                    <leftInput deleted="false" id="1"
+                    name="Country (Root/Object/Country)"
+                    xsi:type="FieldConditionInput" />
+                    <rightInput deleted="false" id="0"
+                    name="&quot;MX&quot;" value="MX"
+                    xsi:type="StaticConditionInput" />
+                  </nestedExpression>
+                </condition>
+                <errorMessage content="Country - 1, is not valid">
+                  <input index="1">
+                    <input xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    deleted="false" id="1"
+                    name="Country (Root/Object/Country)"
+                    xsi:type="FieldConditionInput" />
+                  </input>
+                </errorMessage>
+              </rule>
+            </businessrules>
+          </configuration>
+          <dragpoints>
+            <dragpoint identifier="Accepted"
+            name="shape5.dragpoint1" text="Accepted"
+            toShape="shape10" x="464.0" y="41.0">
+              <linesegment length="0"
+              name="shape5.dragpoint1.lineseg1" orient="horizontal"
+              x="322.0" y="111.0" />
+              <linesegment length="0"
+              name="shape5.dragpoint1.lineseg2" orient="vertical"
+              x="322.0" y="111.0" />
+              <linesegment length="79"
+              name="shape5.dragpoint1.lineseg3" orient="horizontal"
+              x="322.0" y="111.0" />
+              <linesegment length="64"
+              name="shape5.dragpoint1.lineseg4" orient="vertical"
+              x="401.0" y="47.0" />
+              <linesegment label="Accepted" length="63"
+              name="shape5.dragpoint1.lineseg5" orient="horizontal"
+              x="401.0" y="47.0" />
+            </dragpoint>
+            <dragpoint identifier="Rejected"
+            name="shape5.dragpoint2" text="Rejected"
+            toShape="shape15" x="464.0" y="169.0">
+              <linesegment length="0"
+              name="shape5.dragpoint2.lineseg1" orient="horizontal"
+              x="322.0" y="111.0" />
+              <linesegment length="0"
+              name="shape5.dragpoint2.lineseg2" orient="vertical"
+              x="322.0" y="111.0" />
+              <linesegment length="79"
+              name="shape5.dragpoint2.lineseg3" orient="horizontal"
+              x="322.0" y="111.0" />
+              <linesegment length="64"
+              name="shape5.dragpoint2.lineseg4" orient="vertical"
+              x="401.0" y="111.0" />
+              <linesegment label="Rejected" length="63"
+              name="shape5.dragpoint2.lineseg5" orient="horizontal"
+              x="401.0" y="175.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="returndocuments_icon" name="shape9"
+        shapetype="returndocuments" userlabel="Success" x="880.0"
+        y="176.0">
+          <configuration>
+            <returndocuments label="Success" />
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="map_icon" name="shape10" shapetype="map"
+        userlabel="MapResponse" x="480.0" y="32.0">
+          <configuration>
+            <map mapId="638a23ef-40f9-48ca-b197-54bac7fecff4" />
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape10.dragpoint1" toShape="shape16"
+            x="608.0" y="41.0">
+              <linesegment length="0"
+              name="shape10.dragpoint1.lineseg1"
+              orient="horizontal" x="514.0" y="47.0" />
+              <linesegment length="0"
+              name="shape10.dragpoint1.lineseg2" orient="vertical"
+              x="514.0" y="47.0" />
+              <linesegment length="55"
+              name="shape10.dragpoint1.lineseg3"
+              orient="horizontal" x="514.0" y="47.0" />
+              <linesegment length="0"
+              name="shape10.dragpoint1.lineseg4" orient="vertical"
+              x="569.0" y="47.0" />
+              <linesegment length="39"
+              name="shape10.dragpoint1.lineseg5"
+              orient="horizontal" x="569.0" y="47.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+        <shape image="exception_icon" name="shape15"
+        shapetype="exception" userlabel="Invalid Country" x="480.0"
+        y="160.0">
+          <configuration>
+            <exception stopProcessReturnSingleDoc="false"
+            stopsingledoc="false" title="Invalid Country">
+              <exMessage>Country code 1 is not valid for the
+              account {2}.</exMessage>
+              <exParameters>
+                <parametervalue key="0" valueType="profile">
+                  <profileelement elementId="6"
+                  elementName="Country (Root/Object/Country)"
+                  profileId="60b3b539-3546-4a7a-a984-59e68c32ff6f"
+                  profileType="profile.json" />
+                </parametervalue>
+                <parametervalue key="1" valueType="profile">
+                  <profileelement elementId="4"
+                  elementName="AccountId (Root/Object/AccountId)"
+                  profileId="60b3b539-3546-4a7a-a984-59e68c32ff6f"
+                  profileType="profile.json" />
+                </parametervalue>
+              </exParameters>
+            </exception>
+          </configuration>
+          <dragpoints />
+        </shape>
+        <shape image="connectoraction_icon" name="shape16"
+        shapetype="connectoraction" userlabel="Call Http" x="624.0"
+        y="32.0">
+          <configuration>
+            <connectoraction actionType="Get"
+            allowDynamicCredentials="NONE"
+            connectionId="4e104efa-4b56-42c4-b37a-b2982b8799d3"
+            connectorType="http" hideSettings="false"
+            operationId="aec8654f-85ae-4acd-9cfe-2cf558b52977"
+            parameter-profile="EMBEDDED|HttpParameterChooser|aec8654f-85ae-4acd-9cfe-2cf558b52977">
+
+              <parameters />
+            </connectoraction>
+          </configuration>
+          <dragpoints>
+            <dragpoint name="shape16.dragpoint1" toShape="shape9"
+            x="864.0" y="185.0">
+              <linesegment length="0"
+              name="shape16.dragpoint1.lineseg1"
+              orient="horizontal" x="658.0" y="47.0" />
+              <linesegment length="0"
+              name="shape16.dragpoint1.lineseg2" orient="vertical"
+              x="658.0" y="47.0" />
+              <linesegment length="111"
+              name="shape16.dragpoint1.lineseg3"
+              orient="horizontal" x="658.0" y="47.0" />
+              <linesegment length="144"
+              name="shape16.dragpoint1.lineseg4" orient="vertical"
+              x="769.0" y="47.0" />
+              <linesegment length="95"
+              name="shape16.dragpoint1.lineseg5"
+              orient="horizontal" x="769.0" y="191.0" />
+            </dragpoint>
+          </dragpoints>
+        </shape>
+      </shapes>
+    </process>
+  </Object>
+  <Overrides>
+    <Connections>
+      <ConnectionOverride id="4e104efa-4b56-42c4-b37a-b2982b8799d3">
+
+        <field id="url" label="URL" xpath="HttpSettings/@url"
+        overrideable="false" />
+        <field id="connectTimeout" label="Connect Timeout"
+        xpath="HttpSettings/@connectTimeout"
+        overrideable="false" />
+        <field id="readTimeout" label="Read Timeout"
+        xpath="HttpSettings/@readTimeout" overrideable="false" />
+        <field id="useBasicAuth" label="Use Basic Authentication"
+        xpath="HttpSettings/@useBasicAuth" overrideable="false" />
+        <field id="user" label="User"
+        xpath="HttpSettings/AuthSettings/@user"
+        overrideable="false" />
+        <field id="password" label="Password"
+        xpath="HttpSettings/AuthSettings/@password"
+        overrideable="false" />
+        <field id="consumerKey" label="OAuth Consumer Key"
+        xpath="HttpSettings/OAuthSettings/@consumerKey"
+        overrideable="false" />
+        <field id="accessToken" label="OAuth Access Token"
+        xpath="HttpSettings/OAuthSettings/@accessToken"
+        overrideable="false" />
+        <field id="tokenSecret" label="OAuth Token Secret"
+        xpath="HttpSettings/OAuthSettings/@tokenSecret"
+        overrideable="false" />
+        <field id="requestTokenURL" label="OAuth Request Token URL"
+        xpath="HttpSettings/OAuthSettings/@requestTokenURL"
+        overrideable="false" />
+        <field id="authorizationURL"
+        label="OAuth Authorization URL"
+        xpath="HttpSettings/OAuthSettings/@authorizationURL"
+        overrideable="false" />
+        <field id="accessTokenURL" label="OAuth Access URL"
+        xpath="HttpSettings/OAuthSettings/@accessTokenURL"
+        overrideable="false" />
+        <field id="consumerSecret" label="OAuth Consumer Secret"
+        xpath="HttpSettings/OAuthSettings/@consumerSecret"
+        overrideable="false" />
+        <field id="realm" label="OAuth Realm"
+        xpath="HttpSettings/OAuthSettings/@realm"
+        overrideable="false" />
+        <field id="clientauth" label="Use Client Authorization"
+        xpath="HttpSettings/SSLOptions/@clientauth"
+        overrideable="false" />
+        <field id="clientsslalias" label="Client SSL Certificate"
+        xpath="HttpSettings/SSLOptions/@clientsslalias"
+        overrideable="false" />
+        <field id="trustServerCert"
+        label="Use Trusted SSL Certificate"
+        xpath="HttpSettings/SSLOptions/@trustServerCert"
+        overrideable="false" />
+        <field id="trustedcertalias"
+        label="Trust SSL Server Certificate"
+        xpath="HttpSettings/SSLOptions/@trustedcertalias"
+        overrideable="false" />
+        <field id="clientId" label="OAuth2 Client ID"
+        xpath="HttpSettings/OAuth2Settings/credentials/@clientId"
+        overrideable="false" />
+        <field id="clientSecret" label="OAuth2 Client Secret"
+        xpath="HttpSettings/OAuth2Settings/credentials/@clientSecret"
+        overrideable="false" />
+        <field id="authTokenURL2"
+        label="OAuth2 Authorization Token URL"
+        xpath="HttpSettings/OAuth2Settings/authorizationTokenEndpoint/@url"
+        overrideable="false" />
+        <field id="accessTokenURL2" label="OAuth2 Access Token URL"
+        xpath="HttpSettings/OAuth2Settings/accessTokenEndpoint/@url"
+        overrideable="false" />
+        <field id="scope" label="OAuth2 Scope"
+        xpath="HttpSettings/OAuth2Settings/scope"
+        overrideable="false" />
+        <field id="accessToken2" label="OAuth2 Access Token"
+        xpath="HttpSettings/OAuth2Settings/credentials/@accessToken"
+        overrideable="false" />
+        <field id="accessKeyId" label="Amazon AWS Access Key"
+        xpath="HttpSettings/AwsSettings/credentials/accessKeyId"
+        overrideable="false" />
+        <field id="awsSecret" label="Amazon AWS Secret Key"
+        xpath="HttpSettings/AwsSettings/credentials/awsSecret"
+        overrideable="false" />
+        <field id="awsRegion" label="Amazon AWS Region"
+        xpath="HttpSettings/AwsSettings/credentials/awsRegion"
+        overrideable="false" />
+        <field id="customRegion" label="Custom Region"
+        xpath="HttpSettings/AwsSettings/credentials/customRegion"
+        overrideable="false" />
+      </ConnectionOverride>
+    </Connections>
+    <PartnerOverrides />
+    <Properties />
+    <Extensions>
+      <ObjectDefinitions>
+        <unusedProfiles />
+      </ObjectDefinitions>
+      <DataMaps>
+        <unusedMaps />
+      </DataMaps>
+    </Extensions>
+    <CrossReferenceOverrides />
+    <PGPOverrides />
+    <DefinedProcessPropertyOverrides />
+  </Overrides>
+</Component>
