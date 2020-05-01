@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>638a23ef-40f9-48ca-b197-54bac7fecff4</Id>
+  <Type>transform.map</Type>
+  <Name>New Map Success 2</Name>
+  <Version>1</Version>
+  <FolderId name="Boomi_KenHilmen/Demos/boomi_world_2019">
+  3231913</FolderId>
+  <AccountId>boomi_kenhilmen-TS5GBN</AccountId>
+  <Properties />
+  <References>
+    <Ref compId="60b3b539-3546-4a7a-a984-59e68c32ff6f"
+    refId="fromProfile" name="Account JSON 3 2 2" />
+    <Ref compId="77a7cb08-ddc9-4490-a6f9-7c5f37fd3d21"
+    refId="toProfile" name="Account Response 3 2 2" />
+  </References>
+  <Description />
+  <Object>
+    <Map fromProfile="60b3b539-3546-4a7a-a984-59e68c32ff6f"
+    toProfile="77a7cb08-ddc9-4490-a6f9-7c5f37fd3d21">
+      <Mappings>
+        <Mapping fromKey="3"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        fromNamePath="Root/Object/Name" fromType="profile"
+        toKey="3" toKeyPath="*[@key='1']/*[@key='2']/*[@key='3']"
+        toNamePath="Root/Object/Name" toType="profile" />
+        <Mapping fromKey="4"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        fromNamePath="Root/Object/AccountId" fromType="profile"
+        toKey="4" toKeyPath="*[@key='1']/*[@key='2']/*[@key='4']"
+        toNamePath="Root/Object/AccountId" toType="profile" />
+        <Mapping fromKey="5"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        fromNamePath="Root/Object/Description" fromType="profile"
+        toKey="5" toKeyPath="*[@key='1']/*[@key='2']/*[@key='5']"
+        toNamePath="Root/Object/Description" toType="profile" />
+        <Mapping fromKey="6"
+        fromKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        fromNamePath="Root/Object/Country" fromType="profile"
+        toKey="6" toKeyPath="*[@key='1']/*[@key='2']/*[@key='6']"
+        toNamePath="Root/Object/Country" toType="profile" />
+      </Mappings>
+      <Functions optimizeExecutionOrder="true" />
+      <Defaults>
+        <Default toKey="7" value="Success" />
+      </Defaults>
+      <DocumentCacheJoins />
+    </Map>
+  </Object>
+</Component>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Component xmlns:ns2="http://www.boomi.com/connector/annotation"
+xmlns:ns3="http://exacttarget.com/wsdl/partnerAPI"
+xmlns:ns4="urn:fault.partner.exacttarget.com"
+xmlns:ns5="http://schemas.boomi.com/sap/edi_dc40"
+xmlns:ns6="http://schemas.microsoft.com/2003/10/Serialization/"
+deleted="false">
+  <Id>aec8654f-85ae-4acd-9cfe-2cf558b52977</Id>
+  <Type>connector-action</Type>
+  <Name>New Get Operation 2</Name>
+  <Version>1</Version>
+  <FolderId name="Boomi_KenHilmen/Demos/boomi_world_2019">
+  3231913</FolderId>
+  <AccountId>boomi_kenhilmen-TS5GBN</AccountId>
+  <Properties>
+    <Property>
+      <Name>connector-type</Name>
+      <Value>http</Value>
+    </Property>
+    <Property>
+      <Name>action-type</Name>
+      <Value>Get</Value>
+    </Property>
+    <Property>
+      <Name>parameter-profile</Name>
+      <Value>EMBEDDED|HttpParameterChooser</Value>
+    </Property>
+  </Properties>
+  <References />
+  <Description />
+  <Object>
+    <Operation>
+      <Archiving directory="" enabled="false" />
+      <Configuration>
+        <HttpGetAction dataContentType="text/plain"
+        followRedirects="false" methodType="GET"
+        mimePassthrough="false" requestProfileType="NONE"
+        responseProfileType="NONE" returnErrors="false"
+        returnMimeResponse="false">
+          <requestHeaders />
+          <pathElements />
+          <responseHeaderMapping />
+          <reflectHeaders />
+        </HttpGetAction>
+      </Configuration>
+      <Tracking>
+        <TrackedFields />
+      </Tracking>
+      <Caching />
+    </Operation>
+  </Object>
+</Component>
